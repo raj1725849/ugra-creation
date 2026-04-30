@@ -121,18 +121,20 @@ export const CardTransformed = React.forwardRef<
     
     const { scrollYProgress } = useContainerScrollContext()
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
     const start = index / (arrayLength + 1)
     const end = (index + 1) / (arrayLength + 1)
     const range = React.useMemo(() => [start, end], [start, end])
     const rotateRange = [range[0] - 1.5, range[1] / 1.5]
 
-    const y = useTransform(scrollYProgress, range, ["0%", "-180%"])
+    const y = useTransform(scrollYProgress, range, ["0%", isMobile ? "-140%" : "-180%"])
     const rotate = useTransform(scrollYProgress, rotateRange, [
-      incrementRotation,
+      isMobile ? incrementRotation / 4 : incrementRotation,
       0,
     ])
     const transform = useMotionTemplate`translateZ(${
-      index * incrementZ
+      isMobile ? index * (incrementZ / 2) : index * incrementZ
     }px) translateY(${y}) rotate(${rotate}deg)`
 
     const dx = useTransform(scrollYProgress, rotateRange, [4, 0])
@@ -140,7 +142,7 @@ export const CardTransformed = React.forwardRef<
     const blur = useTransform(scrollYProgress, rotateRange, [2, 24])
     const alpha = useTransform(scrollYProgress, rotateRange, [0.15, 0.2])
     const filter =
-      variant === "light" 
+      !isMobile && variant === "light" 
         ? useMotionTemplate`drop-shadow(${dx}px ${dy}px ${blur}px rgba(0,0,0,${alpha}))`
         : "none"
 

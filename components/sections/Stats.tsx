@@ -23,6 +23,7 @@ export default function Stats() {
     if (!containerRef.current) return
 
     const counters = containerRef.current.querySelectorAll('.stat-number')
+    const isMobile = window.innerWidth < 768
     
     counters.forEach((counter: any) => {
       const targetValue = parseInt(counter.getAttribute('data-target') || '0')
@@ -30,11 +31,11 @@ export default function Stats() {
       
       gsap.to(obj, {
         val: targetValue,
-        duration: 2.5,
+        duration: isMobile ? 1.5 : 2.5,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: counter,
-          start: 'top 95%',
+          start: isMobile ? 'top 90%' : 'top 95%',
           toggleActions: 'play none none none',
         },
         onUpdate: () => {
@@ -46,8 +47,8 @@ export default function Stats() {
     // Staggered entrance for the blocks
     gsap.from('.stat-block', {
       opacity: 0,
-      y: 40,
-      duration: 1,
+      y: isMobile ? 20 : 40,
+      duration: isMobile ? 0.6 : 1,
       stagger: 0.1,
       ease: 'power3.out',
       scrollTrigger: {

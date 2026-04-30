@@ -38,24 +38,25 @@ export default function Benefits() {
     if (!containerRef.current) return
 
     const cards = gsap.utils.toArray('.benefit-card')
+    const isMobile = window.innerWidth < 768
     
     // Entrance Animation
     gsap.fromTo(cards, 
       { 
         opacity: 0, 
-        y: 80,
-        x: (i) => BENEFITS[i].xOffset
+        y: 60,
+        x: (i) => isMobile ? 0 : BENEFITS[i].xOffset
       },
       {
         opacity: 1,
         y: 0,
         x: 0,
-        duration: 1.2,
+        duration: isMobile ? 0.8 : 1.2,
         stagger: 0.15,
-        ease: 'power4.out',
+        ease: 'power3.out',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 75%',
+          start: isMobile ? 'top 85%' : 'top 75%',
           toggleActions: 'play none none reverse',
         }
       }
