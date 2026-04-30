@@ -23,7 +23,7 @@ export default function SplitHeading({
   delay = 0
 }: SplitHeadingProps) {
   const containerRef = useRef<HTMLElement>(null)
-  const Tag = tag
+  const Tag = tag as any
 
   useGSAP(() => {
     if (!containerRef.current) return
