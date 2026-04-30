@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 interface SplitHeadingProps {
   text: string
-  tag?: 'h1' | 'h2' | 'h3'
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p'
   splitBy?: 'chars' | 'words' | 'lines'
   className?: string
   delay?: number
@@ -22,7 +22,7 @@ export default function SplitHeading({
   className = '',
   delay = 0
 }: SplitHeadingProps) {
-  const containerRef = useRef<HTMLHeadingElement>(null)
+  const containerRef = useRef<HTMLElement>(null)
   const Tag = tag
 
   useGSAP(() => {
