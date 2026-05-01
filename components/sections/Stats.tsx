@@ -66,9 +66,9 @@ export default function Stats() {
   return (
     <section 
       ref={containerRef}
-      className="bg-cream py-[140px] px-8 md:px-[80px]"
+      className="bg-cream py-16 md:py-24 px-6"
     >
-      <div className="max-w-[1240px] mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <div className="mb-16">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -82,7 +82,7 @@ export default function Stats() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-[48px] md:text-[64px] font-light text-charcoal"
+            className="font-display font-light text-charcoal"
           >
             Numbers That Reflect Our Work
           </motion.h2>

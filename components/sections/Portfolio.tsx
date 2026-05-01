@@ -77,9 +77,9 @@ export default function Portfolio() {
     <section 
       ref={containerRef}
       id="portfolio"
-      className="bg-warm-white py-[120px] px-8 md:px-[80px]"
+      className="bg-warm-white py-16 md:py-24 px-6"
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-6xl mx-auto">
         <header className="mb-[60px]">
           <motion.span
             initial="hidden"
@@ -94,7 +94,7 @@ export default function Portfolio() {
             animate={isInView ? "visible" : "hidden"}
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="font-display text-[48px] md:text-[64px] font-light text-charcoal mt-6"
+            className="font-display font-light text-charcoal mt-6"
           >
             Spaces We've Built
           </motion.h2>

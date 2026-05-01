@@ -10,23 +10,23 @@ gsap.registerPlugin(ScrollTrigger)
 
 const BENEFITS = [
   {
-    title: 'Thoughtful Design',
-    desc: 'Proportion and light are the foundation of every room.',
+    title: 'Spatial Architecture',
+    desc: 'We engineer light and proportion to create environments that breathe without restriction.',
     xOffset: -30,
   },
   {
-    title: 'Premium Materials',
-    desc: 'Sourcing the finest stones and woods for your home.',
+    title: 'Material Integrity',
+    desc: 'Sourcing authentic, uncompromised elements that age with grace and tactile presence.',
     xOffset: 30,
   },
   {
-    title: 'End-to-End',
-    desc: 'From concept to walkthrough, we manage every detail.',
+    title: 'Absolute Precision',
+    desc: 'Every detail, from foundational geometry to final texture, is meticulously controlled.',
     xOffset: -30,
   },
   {
-    title: 'Client-Centric',
-    desc: 'Your lifestyle defines our design. We listen, then create.',
+    title: 'Restrained Elegance',
+    desc: 'Interiors designed for clarity and calm, stripping away the superfluous to leave only the essential.',
     xOffset: 30,
   }
 ]
@@ -67,31 +67,31 @@ export default function Benefits() {
     <section 
       ref={containerRef}
       id="benefits"
-      className="bg-warm-white py-[120px] px-8 md:px-[80px] overflow-hidden"
+      className="bg-warm-white py-16 md:py-24 px-5 md:px-6 overflow-hidden"
     >
-      <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-[40%_60%] gap-[60px] lg:gap-[100px] items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 lg:gap-16 items-center">
         {/* LEFT SIDE */}
         <div className="flex flex-col">
           <span className="font-sans text-[11px] tracking-[4px] text-gold uppercase mb-6">
-            OUR PHILOSOPHY
+            OUR APPROACH
           </span>
-          <h1 className="font-display text-[48px] md:text-[64px] font-light text-charcoal leading-[1.1] mb-8">
-            Design That Reflects How You Live
-          </h1>
-          <p className="font-sans text-[17px] font-light text-mid leading-[1.8] max-w-[480px]">
-            We don’t just design interiors—we shape spaces that feel personal, functional, and refined. Every detail is considered, every material is intentional, and every project is built to elevate everyday living.
+          <h2 className="font-display font-light text-[32px] md:text-[40px] text-charcoal leading-[1.1] mb-8">
+            Engineering the Unseen
+          </h2>
+          <p className="font-sans font-light text-[15px] md:text-mid leading-[1.85] md:leading-[1.9] max-w-[480px]">
+            We shape spaces that evoke calm and clarity. Beyond surface decoration, we focus on the invisible architecture of your daily experience—mastering proportion, authentic materials, and absolute intention.
           </p>
         </div>
 
         {/* RIGHT SIDE: Square Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {BENEFITS.map((benefit, index) => (
             <div 
               key={index}
-              className="benefit-card bg-cream/30 aspect-square p-8 md:p-10 rounded-[4px] border border-gold-light/10 hover:border-gold-light/40 transition-all duration-500 group flex flex-col justify-center shadow-sm hover:shadow-xl hover:scale-[1.03]"
+              className="benefit-card bg-cream/30 aspect-auto md:aspect-square py-12 px-8 md:p-10 rounded-[4px] border border-gold-light/10 hover:border-gold-light/40 transition-all duration-500 group flex flex-col justify-center shadow-sm hover:shadow-xl hover:scale-[1.03] active:scale-[0.98]"
               style={{ willChange: 'transform, opacity' }}
             >
-              <h3 className="font-display text-[24px] md:text-[28px] font-light text-charcoal mb-4 group-hover:text-gold transition-colors duration-500">
+              <h3 className="font-display text-[22px] md:text-[28px] font-light text-charcoal mb-4 group-hover:text-gold transition-colors duration-500">
                 {benefit.title}
               </h3>
               <p className="font-sans text-[14px] font-light text-mid leading-relaxed">

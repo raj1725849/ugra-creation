@@ -75,7 +75,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-[80px] left-8 md:left-[80px] max-w-[800px] z-10">
+      <div className="absolute bottom-[80px] left-6 md:left-[80px] max-w-[800px] z-10 pr-6">
         <div className="hero-label">
           <span className="font-sans text-[11px] tracking-[4px] text-gold uppercase">
             NOIDA · INDIA
@@ -83,7 +83,7 @@ export default function Hero() {
         </div>
         
         <div className="mt-6">
-          <h1 className="font-display text-[64px] md:text-[110px] text-warm-white leading-[1.1] md:leading-none font-light uppercase">
+          <h1 className="text-warm-white leading-[1.1] md:leading-none font-light uppercase">
             <span className="hero-title-line block">
               <SplitHeading text="EVERY SPACE" tag="span" splitBy="chars" className="block" />
             </span>

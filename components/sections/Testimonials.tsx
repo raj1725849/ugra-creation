@@ -59,8 +59,8 @@ export default function Testimonials() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section ref={containerRef} className="bg-charcoal px-8 md:px-[80px] py-[120px] relative">
-      <div className="max-w-[1240px] mx-auto relative z-10">
+    <section ref={containerRef} className="bg-charcoal py-16 md:py-24 px-6 relative">
+      <div className="max-w-6xl mx-auto relative z-10">
         <header className="mb-[60px] text-center">
           <motion.span
             initial="hidden"
@@ -75,7 +75,7 @@ export default function Testimonials() {
             animate={isInView ? "visible" : "hidden"}
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="font-display text-[48px] md:text-[64px] font-light text-warm-white mt-6"
+            className="font-display font-light text-warm-white mt-6"
           >
             Words of Appreciation
           </motion.h2>
@@ -83,14 +83,14 @@ export default function Testimonials() {
       </div>
 
       <ContainerScroll className="container h-[300vh] relative z-20">
-        <div className="sticky left-0 top-0 h-svh w-full py-12 flex items-center justify-center">
-          <CardsContainer className="size-full max-w-[400px] h-[450px]">
+        <div className="sticky left-0 top-0 h-svh w-full py-12 flex items-center justify-center overflow-hidden">
+          <CardsContainer className="w-full max-w-[400px] h-[450px] px-4 md:px-0">
             {TESTIMONIALS.map((testimonial, index) => (
               <CardTransformed
                 arrayLength={TESTIMONIALS.length}
                 key={testimonial.id}
                 variant="light"
-                index={index + 2}
+                index={index}
                 role="article"
                 aria-labelledby={`card-${testimonial.id}-title`}
                 aria-describedby={`card-${testimonial.id}-content`}

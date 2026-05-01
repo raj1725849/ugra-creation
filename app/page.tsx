@@ -2,6 +2,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/sections/Hero'
 import Benefits from '@/components/sections/Benefits'
+import CinematicBrand from '@/components/sections/CinematicBrand'
 import Philosophy from '@/components/sections/Philosophy'
 import Services from '@/components/sections/Services'
 import Portfolio from '@/components/sections/Portfolio'
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Benefits />
+      <CinematicBrand />
       <Philosophy />
       <Services />
       <Portfolio />

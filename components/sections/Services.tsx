@@ -8,37 +8,37 @@ const services = [
   {
     id: "01",
     name: "Residential Interiors",
-    descriptor: "Full-home design for discerning homeowners",
+    descriptor: "Private residences built for calm and clarity",
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=80",
-    description: "From concept to completion — spaces designed around how you live.",
+    description: "From concept to completion — environments shaped entirely around how you live.",
   },
   {
     id: "02",
     name: "Commercial Spaces",
-    descriptor: "Offices, hospitality, and retail environments",
+    descriptor: "Workspaces and retail, engineered for focus",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80",
-    description: "Environments built for brand, and built for people.",
+    description: "Environments built for brand integrity and human experience.",
   },
   {
     id: "03",
-    name: "Turnkey Projects",
-    descriptor: "End-to-end execution, from concept to handover",
+    name: "Turnkey Execution",
+    descriptor: "End-to-end realization without compromise",
     image: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1400&q=80",
-    description: "One point of contact. We handle every detail.",
+    description: "One point of absolute accountability. We manage every single detail.",
   },
   {
     id: "04",
     name: "Space Planning",
-    descriptor: "Precision layouts that maximize light and function",
+    descriptor: "Architectural precision and flow",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=80",
-    description: "Space understood before a single material is chosen.",
+    description: "Understanding the site, light, and movement before a material is chosen.",
   },
   {
     id: "05",
     name: "Material Curation",
-    descriptor: "Sourcing finishes, fabrics, and furniture globally",
+    descriptor: "Global sourcing of uncompromised finishes",
     image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1400&q=80",
-    description: "Stone, timber, textile, steel — chosen with precision.",
+    description: "Stone, timber, textile, steel — selected for tactile quality and longevity.",
   },
 ]
 
@@ -140,12 +140,12 @@ export default function Services() {
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
-    <section className="bg-charcoal py-[80px] md:py-[120px] px-8 md:px-[80px]">
-      <div className="max-w-[1240px] mx-auto">
+    <section className="bg-charcoal py-16 md:py-24 px-6">
+      <div className="max-w-6xl mx-auto">
         <p className="font-sans text-[11px] tracking-[4px] text-gold uppercase mb-4">
           WHAT WE DO
         </p>
-        <h2 className="font-display text-[48px] md:text-[64px] font-light text-warm-white mb-[60px] md:mb-[80px] leading-none">
+        <h2 className="font-display font-light text-warm-white mb-[60px] md:mb-[80px] leading-none">
           Our Practice
         </h2>
 

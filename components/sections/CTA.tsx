@@ -18,7 +18,7 @@ export default function CTA() {
     <section 
       ref={containerRef}
       id="contact"
-      className="bg-forest py-[140px] px-8 md:px-[80px] text-center flex flex-col items-center"
+      className="bg-forest py-16 md:py-24 px-6 text-center flex flex-col items-center overflow-hidden"
     >
       <motion.span
         initial="hidden"
@@ -34,13 +34,13 @@ export default function CTA() {
           text="Your space deserves"
           tag="h2"
           splitBy="words"
-          className="font-display italic text-[56px] md:text-[80px] font-light text-warm-white leading-[1.1]"
+          className="font-display italic font-light text-warm-white leading-[1.1]"
         />
         <SplitHeading
           text="considered design."
           tag="h2"
           splitBy="words"
-          className="font-display italic text-[56px] md:text-[80px] font-light text-warm-white leading-[1.1]"
+          className="font-display italic font-light text-warm-white leading-[1.1]"
           delay={0.5}
         />
       </div>
