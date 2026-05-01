@@ -134,7 +134,7 @@ export const CardTransformed = React.forwardRef<
       0,
     ])
     const transform = useMotionTemplate`translateZ(${
-      isMobile ? index * (incrementZ / 2) : index * incrementZ
+      isMobile ? (arrayLength - index) * (incrementZ / 2) : (arrayLength - index) * incrementZ
     }px) translateY(${y}) rotate(${rotate}deg)`
 
     const dx = useTransform(scrollYProgress, rotateRange, [4, 0])
@@ -150,7 +150,7 @@ export const CardTransformed = React.forwardRef<
       top: index * incrementY,
       transform,
       backfaceVisibility: "hidden" as const,
-      zIndex: (arrayLength - index) * incrementZ,
+      zIndex: (arrayLength - index),
       filter,
       ...style,
     }

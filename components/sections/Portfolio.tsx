@@ -14,42 +14,42 @@ gsap.registerPlugin(ScrollTrigger)
 const PROJECTS = [
   {
     id: 1,
-    title: 'The Khanna Residence',
-    type: 'Residential',
+    title: '3BHK Residence · Sector 50, Noida',
+    type: 'Full Interior Execution',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900',
-    desc: 'A luxury residence focusing on textures and natural light.',
+    desc: 'Focusing on textures and natural light for a calm, restorative environment.',
     height: 'aspect-[4/5]'
   },
   {
     id: 2,
-    title: 'Studio Grey, Sector 18',
-    type: 'Commercial',
+    title: 'Corporate Office · Noida Expressway',
+    type: 'Space Planning + Material Fit-Out',
     image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600',
-    desc: 'Minimalist workspace designed for maximum creativity.',
+    desc: 'Minimalist workspace engineered for focus and brand integrity.',
     height: 'aspect-[1/1]'
   },
   {
     id: 3,
-    title: 'The Arora Penthouse',
-    type: 'Turnkey',
+    title: 'Villa Renovation · Greater Noida',
+    type: 'Concept Through Handover',
     image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600',
-    desc: 'High-end penthouse with bespoke furniture and finishes.',
+    desc: 'Extensive structural changes and bespoke furniture design.',
     height: 'aspect-[4/5]'
   },
   {
     id: 4,
-    title: 'Oasis Retreat',
-    type: 'Hospitality',
+    title: 'Boutique Hospitality · South Delhi',
+    type: 'Turnkey Execution',
     image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600',
-    desc: 'A serene boutique hotel lobby in the heart of Noida.',
+    desc: 'A serene reception and lobby focusing on tactile material quality.',
     height: 'aspect-[1/1]'
   },
   {
     id: 5,
-    title: 'Urban Loft',
-    type: 'Residential',
+    title: 'Private Suite · Faridabad',
+    type: 'Design + Execution',
     image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600',
-    desc: 'Modern industrial loft with open spaces and raw materials.',
+    desc: 'Complete spatial overhaul prioritizing privacy and curated finishes.',
     height: 'aspect-[4/5]'
   }
 ]
@@ -77,10 +77,10 @@ export default function Portfolio() {
     <section 
       ref={containerRef}
       id="portfolio"
-      className="bg-warm-white py-16 md:py-24 px-6"
+      className="bg-warm-white py-16 md:py-24 px-5 md:px-6"
     >
       <div className="max-w-6xl mx-auto">
-        <header className="mb-[60px]">
+        <header className="mb-[60px] max-w-[600px]">
           <motion.span
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -96,8 +96,17 @@ export default function Portfolio() {
             transition={{ delay: 0.2 }}
             className="font-display font-light text-charcoal mt-6"
           >
-            Spaces We've Built
+            Selected Design Details
           </motion.h2>
+          <motion.p
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={fadeUp}
+            transition={{ delay: 0.3 }}
+            className="font-sans text-[15px] md:text-mid font-light text-charcoal/70 mt-6 leading-[1.8]"
+          >
+            A curated selection of completed works — shared with client permission. Each project represents a specific brief, material palette, and outcome.
+          </motion.p>
         </header>
 
         {/* Masonry-style Grid */}
@@ -107,22 +116,6 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <motion.div 
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={fadeUp}
-          transition={{ delay: 0.6 }}
-          className="mt-[80px] text-center"
-        >
-          <Link 
-            href="/projects" 
-            className="group relative inline-block font-sans text-[13px] tracking-[2px] text-charcoal uppercase"
-            data-cursor="hover"
-          >
-            View More Projects →
-            <span className="absolute bottom-[-4px] left-0 w-0 h-[1px] bg-charcoal transition-all duration-500 group-hover:w-full" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   )
@@ -160,7 +153,7 @@ function ProjectCard({ project }: { project: any }) {
           hover: { opacity: 1 }
         }}
         transition={{ duration: 0.4 }}
-        className="absolute inset-0 bg-dark/60 p-8 flex flex-col justify-end hidden md:flex"
+        className="absolute inset-0 bg-dark/70 p-8 flex flex-col justify-end hidden md:flex"
       >
         <motion.h4 
           variants={{
@@ -168,7 +161,7 @@ function ProjectCard({ project }: { project: any }) {
             hover: { y: 0, opacity: 1 }
           }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="font-display italic text-[24px] lg:text-[28px] text-white"
+          className="font-display italic text-[20px] lg:text-[24px] text-white"
         >
           {project.title}
         </motion.h4>
@@ -178,7 +171,7 @@ function ProjectCard({ project }: { project: any }) {
             hover: { y: 0, opacity: 1 }
           }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="font-sans text-[12px] text-warm-white/70 leading-relaxed mt-2"
+          className="font-sans text-[13px] text-warm-white/80 leading-relaxed mt-2"
         >
           {project.desc}
         </motion.p>
@@ -195,11 +188,11 @@ function ProjectCard({ project }: { project: any }) {
       </motion.div>
 
       {/* Mobile Overlay (Always visible or semi-visible) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent p-6 flex flex-col justify-end md:hidden">
-        <h4 className="font-display italic text-[20px] text-white">
+      <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent p-5 flex flex-col justify-end md:hidden">
+        <h4 className="font-display italic text-[18px] text-white">
           {project.title}
         </h4>
-        <p className="font-sans text-[10px] text-gold tracking-[1px] uppercase mt-1">
+        <p className="font-sans text-[10px] text-gold tracking-[1px] uppercase mt-2">
           {project.type}
         </p>
       </div>
